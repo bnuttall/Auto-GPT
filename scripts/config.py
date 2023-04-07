@@ -68,6 +68,9 @@ class Config(metaclass=Singleton):
 
         self.image_provider = os.getenv("IMAGE_PROVIDER")
         self.huggingface_api_token = os.getenv("HUGGINGFACE_API_TOKEN")
+ 
+        # wolfram Alpha
+        self.wolframalpha_appid = os.getenv("WOLFRAMALPHA_APPID")
 
         # User agent headers to use when browsing web
         # Some websites might just completely deny request with an error code if no user agent was found.
@@ -134,3 +137,7 @@ class Config(metaclass=Singleton):
     def set_debug_mode(self, value: bool):
         """Set the debug mode value."""
         self.debug_mode = value
+
+    def set_wolframalpha_appid(self, value: str):
+        """ Set the Wolfram Alpha app id"""
+        self.wolframalpha_appid = value        
